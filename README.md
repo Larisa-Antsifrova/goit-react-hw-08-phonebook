@@ -1,4 +1,3 @@
-# React Homework. Module 8.
+# React Homework. Module 8
 
-
-User authorization.
+Phonebook App. User authorization.

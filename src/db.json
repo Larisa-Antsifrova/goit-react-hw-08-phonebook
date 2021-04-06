@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "name": "Larisa Vladimirovna",
+      "number": "0633896690",
+      "id": 1
+    },
+    {
+      "name": "Makar Olegovich",
+      "number": "0631234690",
+      "id": 2
+    },
+    {
+      "name": "Katerina Vladimirovna",
+      "number": "0732165379",
+      "id": 3
+    },
+    {
+      "name": "Lena Leonidovna",
+      "number": "0732845345",
+      "id": 5
+    },
+    {
+      "name": "Sasha Sergeevich",
+      "number": "0631234690",
+      "id": 6
+    }
+  ]
+}
