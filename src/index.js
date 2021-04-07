@@ -1,6 +1,7 @@
 // Imports from React
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 // Imports from Redux
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
@@ -15,11 +16,13 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      {/* <PersistGate loading="Loading..." persistor={persistor}> */}
-      <App />
-      {/* </PersistGate> */}
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        {/* <PersistGate loading="Loading..." persistor={persistor}> */}
+        <App />
+        {/* </PersistGate> */}
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );
