@@ -24,6 +24,9 @@ const RegisterPage = lazy(() =>
 const ContactsPage = lazy(() =>
   import('./views/ContactsPage' /* webpackChunkName: "contacts-page" */),
 );
+const NotFoundPage = lazy(() =>
+  import('./views/NotFoundPage' /* webpackChunkName: "contacts-page" */),
+);
 
 const App = () => {
   return (
@@ -44,6 +47,7 @@ const App = () => {
           <Route path={routes.register} component={RegisterPage} />
           <Route path={routes.login} component={LoginPage} />
           <Route path={routes.contacts} component={ContactsPage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </Suspense>
     </>
