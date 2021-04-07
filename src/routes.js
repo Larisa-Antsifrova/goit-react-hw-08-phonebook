@@ -1,6 +1,6 @@
 const routes = {
   home: '/',
-  register: '/register ',
+  register: '/register',
   login: '/login',
   contacts: '/contacts',
 };

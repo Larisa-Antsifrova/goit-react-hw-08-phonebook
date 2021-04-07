@@ -4,26 +4,25 @@ import { Route, Switch } from 'react-router-dom';
 
 // Components imports
 
-// import Footer from './components/Footer';
+// Helpers imports
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 // Routes imports
 import routes from './routes';
 
-// Views imports
-// Lazy loading for views
+// Lazy imports for views
 const HomePage = lazy(() =>
   import('./views/HomePage' /* webpackChunkName: "home-page" */),
 );
 const LoginPage = lazy(() =>
-  import('./views/LoginPage' /* webpackChunkName: "home-page" */),
+  import('./views/LoginPage' /* webpackChunkName: "login-page" */),
 );
 const RegisterPage = lazy(() =>
-  import('./views/RegisterPage' /* webpackChunkName: "home-page" */),
+  import('./views/RegisterPage' /* webpackChunkName: "register-page" */),
 );
 const ContactsPage = lazy(() =>
-  import('./views/ContactsPage' /* webpackChunkName: "home-page" */),
+  import('./views/ContactsPage' /* webpackChunkName: "contacts-page" */),
 );
 
 const App = () => {
