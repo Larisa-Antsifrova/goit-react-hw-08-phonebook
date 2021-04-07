@@ -1,26 +1,15 @@
-// Imports from React
-import React from 'react';
-// Imports of components
-import Section from './components/Section';
-import PageTitle from './components/PageTitle';
-import Title from './components/Title';
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
+// React imports
+import React, { Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+// Components imports
+
+// import Footer from './components/Footer';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const App = () => {
-  return (
-    <>
-      <PageTitle title="Phone Book" />
-      <Section>
-        <Title title="Add contacts" />
-        <ContactForm />
-        <Title title="Сontacts" />
-        <Filter />
-        <ContactList />
-      </Section>
-    </>
-  );
+  return <></>;
 };
 
 export default App;
