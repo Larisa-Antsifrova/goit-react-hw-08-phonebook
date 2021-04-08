@@ -1,15 +1,12 @@
 import React from 'react';
 import { AppBar as PhoneBookBar } from '@material-ui/core';
 import Container from '../Container';
-
-import { NavLink } from 'react-router-dom';
-import routes from '../../routes';
-
+import Navigation from '../Navigation';
 const AppBar = () => {
   return (
-    <PhoneBookBar>
+    <PhoneBookBar position="static">
       <Container maxWidth="md">
-        <div>Here comes App bar!</div>
+        <Navigation />
       </Container>
     </PhoneBookBar>
   );
