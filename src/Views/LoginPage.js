@@ -1,10 +1,13 @@
 import React from 'react';
+import Section from '../components/Section';
 
 const LoginPage = () => {
   return (
-    <div>
-      <h2>Login Page</h2>
-    </div>
+    <Section>
+      <div>
+        <h2>Login Page</h2>
+      </div>
+    </Section>
   );
 };
 

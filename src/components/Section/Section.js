@@ -2,13 +2,15 @@
 import React from 'react';
 // Imports of helpers
 import PropTypes from 'prop-types';
+
+import Container from '../Container';
 // Styles imports
 import styles from './Section.module.css';
 
 const Section = ({ children }) => {
   return (
-    <section>
-      <div className={styles.container}>{children}</div>
+    <section className={styles.section}>
+      <Container>{children}</Container>
     </section>
   );
 };
