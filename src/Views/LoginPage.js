@@ -1,17 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Section from '../components/Section';
 import Main from '../components/Main';
 
-const LoginPage = () => {
-  return (
-    <Main>
+class LoginPage extends Component {
+  state = {
+    email: '',
+    password: '',
+  };
+
+  handleChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    // this.props.onLogin(this.state);
+
+    this.setState({ name: '', email: '', password: '' });
+  };
+
+  render() {
+    const { email, password } = this.state;
+
+    return (
       <Section>
-        <div>
-          <h2>Login Page</h2>
-        </div>
+        <Main>
+          <h1>Login Page</h1>
+
+          <form onSubmit={this.handleSubmit} autoComplete="off">
+            <label>
+              Email
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+              />
+            </label>
+
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </label>
+
+            <button type="submit">Login</button>
+          </form>
+        </Main>
       </Section>
-    </Main>
-  );
-};
+    );
+  }
+}
 
 export default LoginPage;
