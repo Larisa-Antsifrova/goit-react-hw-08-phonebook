@@ -1,13 +1,16 @@
 import React from 'react';
 import Section from '../components/Section';
+import Main from '../components/Main';
 
 const RegisterPage = () => {
   return (
-    <Section>
-      <div>
-        <h2>Register Page</h2>
-      </div>
-    </Section>
+    <Main>
+      <Section>
+        <div>
+          <h2>Register Page</h2>
+        </div>
+      </Section>
+    </Main>
   );
 };
 
