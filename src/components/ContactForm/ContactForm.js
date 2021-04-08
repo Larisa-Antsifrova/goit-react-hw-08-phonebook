@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 // Imports from Redux
 import { connect } from 'react-redux';
-import { addContact } from '../../redux/contacts-operations';
-import { getAllContacts } from '../../redux/contacts-selectors';
+import { addContact } from '../../redux/contacts/contacts-operations';
+import { getAllContacts } from '../../redux/contacts/contacts-selectors';
 // Helpers imports
 import PropTypes from 'prop-types';
 // Styles imports

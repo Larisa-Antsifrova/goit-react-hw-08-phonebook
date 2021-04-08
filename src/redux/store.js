@@ -3,7 +3,7 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 // Imports of middleware
 import logger from 'redux-logger';
 // Imports of reducers
-import { phonebookReducer } from './contacts-reducers';
+import { phonebookReducer } from './contacts/contacts-reducers';
 
 const middleware = [...getDefaultMiddleware(), logger];
 

@@ -2,8 +2,8 @@
 import React from 'react';
 // Imports from Redux
 import { connect } from 'react-redux';
-import { updateFilter } from '../../redux/contacts-actions';
-import { getFilterValue } from '../../redux/contacts-selectors';
+import { updateFilter } from '../../redux/contacts/contacts-actions';
+import { getFilterValue } from '../../redux/contacts/contacts-selectors';
 // Imports of helpers
 import PropTypes from 'prop-types';
 // Styles imports
