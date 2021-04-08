@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Section from '../components/Section';
 import Main from '../components/Main';
-
+import { registerUser } from '../redux/auth/auth-operations';
 class RegisterPage extends Component {
   state = {
     name: '',
@@ -16,7 +17,7 @@ class RegisterPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    // this.props.onRegister(this.state);
+    this.props.onSubmit(this.state);
 
     this.setState({ name: '', email: '', password: '' });
   };
@@ -68,4 +69,8 @@ class RegisterPage extends Component {
   }
 }
 
-export default RegisterPage;
+const mapDispatchToProps = {
+  onSubmit: registerUser,
+};
+
+export default connect(null, mapDispatchToProps)(RegisterPage);
