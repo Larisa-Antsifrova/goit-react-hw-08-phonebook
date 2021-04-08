@@ -39,7 +39,7 @@ const loading = createReducer(false, {
   [deleteContactError]: () => false,
 });
 
-export const phonebookReducer = combineReducers({
+export const contactsReducer = combineReducers({
   items,
   filter,
   loading,

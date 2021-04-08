@@ -24,7 +24,7 @@ const registerUser = user => async dispatch => {
     const response = await axios.post('/users/signup', user);
     dispatch(registerSuccess(response.data));
   } catch (error) {
-    dispatch(registerError(error));
+    dispatch(registerError(error.message));
   }
 };
 
