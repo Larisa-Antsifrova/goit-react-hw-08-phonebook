@@ -10,8 +10,6 @@ const UserMenu = () => {
       <NavLink exact to={routes.home}>
         Log out
       </NavLink>
-      <NavLink to={routes.register}>Register</NavLink>
-      <NavLink to={routes.login}>Login</NavLink>
     </div>
   );
 };
