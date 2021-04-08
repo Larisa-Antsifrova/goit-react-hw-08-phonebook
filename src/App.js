@@ -3,7 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // Components imports
-
+import AppBar from './components/AppBar';
 // Helpers imports
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
@@ -42,6 +42,7 @@ const App = () => {
           />
         }
       >
+        <AppBar />
         <Switch>
           <Route exact path={routes.home} component={HomePage} />
           <Route path={routes.register} component={RegisterPage} />
