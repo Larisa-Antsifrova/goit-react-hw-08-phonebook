@@ -3,6 +3,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 
+import Logo from '../Logo';
+
 import styles from './Navigation.module.css';
 
 const Navigation = () => {
@@ -16,6 +18,16 @@ const Navigation = () => {
             className={styles.NavLink}
             // activeClassName={styles['NavLink-active']}
           >
+            <Logo />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            exact
+            to={routes.home}
+            className={styles.NavLink}
+            activeClassName={styles['NavLink-active']}
+          >
             Home
           </NavLink>
         </li>
@@ -23,7 +35,7 @@ const Navigation = () => {
           <NavLink
             to={routes.contacts}
             className={styles.NavLink}
-            // activeClassName={styles['NavLink-active']}
+            activeClassName={styles['NavLink-active']}
           >
             Contacts
           </NavLink>
