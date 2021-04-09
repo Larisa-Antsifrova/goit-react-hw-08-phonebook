@@ -15,12 +15,14 @@ import {
   deleteContactError,
   updateFilter,
 } from './contacts-actions';
+import { logoutSuccess } from '../auth/auth-actions';
 
 const items = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,
   [addContactSuccess]: (state, { payload }) => [payload, ...state],
   [deleteContactSuccess]: (state, { payload }) =>
     state.filter(contact => contact.id !== payload),
+  [logoutSuccess]: () => [],
 });
 
 const filter = createReducer('', {
