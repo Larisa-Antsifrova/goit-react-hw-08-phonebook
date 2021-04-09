@@ -12,6 +12,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 // Routes imports
 import routes from './routes';
 import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
 
 // Imports from Redux
 import { connect } from 'react-redux';
@@ -58,8 +59,18 @@ class App extends Component {
           <AppBar />
           <Switch>
             <Route exact path={routes.home} component={HomePage} />
-            <Route path={routes.register} component={RegisterPage} />
-            <Route path={routes.login} component={LoginPage} />
+            <PublicRoute
+              path={routes.register}
+              component={RegisterPage}
+              restricted
+              redirectTo={routes.home}
+            />
+            <PublicRoute
+              path={routes.login}
+              component={LoginPage}
+              restricted
+              redirectTo={routes.home}
+            />
             <PrivateRoute
               path={routes.contacts}
               component={ContactsPage}
