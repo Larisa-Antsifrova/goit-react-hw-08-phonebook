@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 
-import { getUserName } from '../../redux/auth/auth-selectors';
+import { getUserName, getUserEmail } from '../../redux/auth/auth-selectors';
+import { logoutUser } from '../../redux/auth/auth-operations';
 
-const UserMenu = ({ userName }) => {
+const UserMenu = ({ userName, userEmail, onLogout }) => {
   return (
     <div>
-      <span>Hello, {userName}!</span>
-      <NavLink exact to={routes.home}>
+      <span>Hello, {userEmail}!</span>
+      <NavLink exact to={routes.home} onClick={onLogout}>
         Log out
       </NavLink>
     </div>
@@ -19,6 +20,11 @@ const UserMenu = ({ userName }) => {
 
 const mapStateToProps = state => ({
   userName: getUserName(state),
+  userEmail: getUserEmail(state),
 });
 
-export default connect(mapStateToProps)(UserMenu);
+const mapDispatchToProps = {
+  onLogout: logoutUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMenu);
