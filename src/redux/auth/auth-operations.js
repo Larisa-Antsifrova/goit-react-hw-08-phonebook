@@ -1,3 +1,4 @@
+// Imports of actions
 import {
   registerRequest,
   registerSuccess,
@@ -12,9 +13,8 @@ import {
   getCurrentUserSuccess,
   getCurrentUserError,
 } from './auth-actions';
-
+// Imports of libraries
 import axios from 'axios';
-
 axios.defaults.baseURL = 'https://goit-phonebook-api.herokuapp.com';
 
 const token = {
