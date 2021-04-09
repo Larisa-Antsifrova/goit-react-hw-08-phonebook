@@ -69,7 +69,7 @@ class App extends Component {
               path={routes.login}
               component={LoginPage}
               restricted
-              redirectTo={routes.home}
+              redirectTo={routes.contacts}
             />
             <PrivateRoute
               path={routes.contacts}

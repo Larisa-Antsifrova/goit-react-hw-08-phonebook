@@ -13,8 +13,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// Imports of middleware
-import logger from 'redux-logger';
+
 // Imports of reducers
 import { contactsReducer } from './contacts/contacts-reducers';
 import { authReducer } from './auth/auth-reducers';
@@ -25,7 +24,6 @@ const middleware = [
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
   }),
-  logger,
 ];
 
 const authPersistConfig = {
