@@ -11,6 +11,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 // Routes imports
 import routes from './routes';
+import PrivateRoute from './components/PrivateRoute';
 
 // Imports from Redux
 import { connect } from 'react-redux';
@@ -59,7 +60,11 @@ class App extends Component {
             <Route exact path={routes.home} component={HomePage} />
             <Route path={routes.register} component={RegisterPage} />
             <Route path={routes.login} component={LoginPage} />
-            <Route path={routes.contacts} component={ContactsPage} />
+            <PrivateRoute
+              path={routes.contacts}
+              component={ContactsPage}
+              redirectTo={routes.login}
+            />
             <Route component={NotFoundPage} />
           </Switch>
         </Suspense>
