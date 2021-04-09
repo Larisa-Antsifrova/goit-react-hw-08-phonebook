@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 
-const UserMenu = () => {
+import { getUserName } from '../../redux/auth/auth-selectors';
+
+const UserMenu = ({ userName }) => {
   return (
     <div>
-      <span>User info</span>
+      <span>Hello, {userName}!</span>
       <NavLink exact to={routes.home}>
         Log out
       </NavLink>
@@ -14,4 +17,8 @@ const UserMenu = () => {
   );
 };
 
-export default UserMenu;
+const mapStateToProps = state => ({
+  userName: getUserName(state),
+});
+
+export default connect(mapStateToProps)(UserMenu);

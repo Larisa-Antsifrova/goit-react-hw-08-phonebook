@@ -4,17 +4,22 @@ import Container from '../Container';
 import Navigation from '../Navigation';
 import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
+import { connect } from 'react-redux';
+import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
-const AppBar = () => {
+const AppBar = ({ isAuthenticated }) => {
   return (
     <PhoneBookBar position="static">
       <Container maxWidth="md">
         <Navigation />
-        <UserMenu />
-        <AuthNav />
+        {isAuthenticated ? <UserMenu /> : <AuthNav />}
       </Container>
     </PhoneBookBar>
   );
 };
 
-export default AppBar;
+const mapStateToProps = state => ({
+  isAuthenticated: getIsAuthenticated(state),
+});
+
+export default connect(mapStateToProps)(AppBar);
