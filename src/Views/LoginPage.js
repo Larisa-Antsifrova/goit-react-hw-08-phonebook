@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Section from '../components/Section';
 import Main from '../components/Main';
+
+import { loginUser } from '../redux/auth/auth-operations';
 
 class LoginPage extends Component {
   state = {
@@ -15,7 +19,7 @@ class LoginPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    // this.props.onLogin(this.state);
+    this.props.onSubmit(this.state);
 
     this.setState({ name: '', email: '', password: '' });
   };
@@ -57,4 +61,8 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapDispatchToProps = {
+  onSubmit: loginUser,
+};
+
+export default connect(null, mapDispatchToProps)(LoginPage);

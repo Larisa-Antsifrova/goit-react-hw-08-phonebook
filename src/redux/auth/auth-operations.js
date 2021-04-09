@@ -2,12 +2,12 @@ import {
   registerRequest,
   registerSuccess,
   registerError,
-  logoutRequest,
-  logoutSuccess,
-  logoutError,
   loginRequest,
   loginSuccess,
   loginError,
+  logoutRequest,
+  logoutSuccess,
+  logoutError,
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
@@ -28,10 +28,19 @@ const registerUser = user => async dispatch => {
   }
 };
 
-const loginUser = () => dispatch => {};
+const loginUser = user => async dispatch => {
+  dispatch(loginRequest());
+
+  try {
+    const response = await axios.post('/users/login', user);
+    dispatch(loginSuccess(response.data));
+  } catch (error) {
+    dispatch(loginError(error.message));
+  }
+};
 
 const logoutUser = () => dispatch => {};
 
 const getCurrentUser = () => dispatch => {};
 
-export { registerUser };
+export { registerUser, loginUser };

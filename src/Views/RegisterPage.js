@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Section from '../components/Section';
 import Main from '../components/Main';
 import { registerUser } from '../redux/auth/auth-operations';
+
 class RegisterPage extends Component {
   state = {
     name: '',
