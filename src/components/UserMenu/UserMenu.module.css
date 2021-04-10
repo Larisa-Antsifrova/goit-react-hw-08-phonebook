@@ -1,0 +1,23 @@
+.UserMenu {
+  display: flex;
+  margin-left: auto;
+
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.NavLink {
+  display: block;
+  padding: 15px;
+  margin-left: 10px;
+
+  font-weight: 500;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.NavLink:hover {
+  background-color: #283593;
+}

@@ -1,21 +1,53 @@
+// Imports from React
 import React from 'react';
-import { connect } from 'react-redux';
-
 import { NavLink } from 'react-router-dom';
+// Imports of routes
 import routes from '../../routes';
-
+// Imports of components
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+// Imports from Redux
+import { connect } from 'react-redux';
 import { getUserName, getUserEmail } from '../../redux/auth/auth-selectors';
 import { logoutUser } from '../../redux/auth/auth-operations';
+// Imports of helpers
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+// Styles imports
+import styles from './UserMenu.module.css';
 
-const UserMenu = ({ userName, userEmail, onLogout }) => {
+// Customization of default Chip component from Matarial-UI
+const StyledChip = withStyles({
+  root: {
+    'background-color': '#283593',
+    color: '#ffffff',
+  },
+})(Chip);
+
+const UserMenu = ({ userEmail, onLogout }) => {
   return (
-    <div>
-      <span>Hello, {userEmail}!</span>
-      <NavLink exact to={routes.home} onClick={onLogout}>
-        Log out
+    <div className={styles.UserMenu}>
+      <StyledChip avatar={<Avatar />} label={userEmail} />
+      <NavLink
+        exact
+        to={routes.home}
+        onClick={onLogout}
+        className={styles.NavLink}
+      >
+        <ExitToAppIcon />
       </NavLink>
     </div>
   );
+};
+
+UserMenu.defaultProps = {
+  userEmail: null,
+};
+
+UserMenu.propTypes = {
+  userEmail: PropTypes.string,
+  onLogout: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
