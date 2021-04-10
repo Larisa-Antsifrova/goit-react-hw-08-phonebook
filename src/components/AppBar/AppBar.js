@@ -7,12 +7,16 @@ import AuthNav from '../AuthNav';
 import { connect } from 'react-redux';
 import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
+import styles from './AppBar.module.css';
+
 const AppBar = ({ isAuthenticated }) => {
   return (
     <PhoneBookBar position="static">
-      <Container maxWidth="md">
-        <Navigation />
-        {isAuthenticated ? <UserMenu /> : <AuthNav />}
+      <Container>
+        <div className={styles.AppBar}>
+          <Navigation />
+          {isAuthenticated ? <UserMenu /> : <AuthNav />}
+        </div>
       </Container>
     </PhoneBookBar>
   );

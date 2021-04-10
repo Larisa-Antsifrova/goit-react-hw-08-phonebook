@@ -1,14 +1,16 @@
+// Imports from React
 import React from 'react';
-
 import { NavLink } from 'react-router-dom';
+// Imports of routes
 import routes from '../../routes';
-
+// Imports of components
 import Logo from '../Logo';
-
 // Imports from Redux
 import { connect } from 'react-redux';
 import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
-
+// Imports of helpers
+import PropTypes from 'prop-types';
+// Styles imports
 import styles from './Navigation.module.css';
 
 const Navigation = ({ isAuthenticated }) => {
@@ -16,12 +18,7 @@ const Navigation = ({ isAuthenticated }) => {
     <nav>
       <ul className={styles.NavLinksList}>
         <li>
-          <NavLink
-            exact
-            to={routes.home}
-            className={styles.NavLink}
-            // activeClassName={styles['NavLink-active']}
-          >
+          <NavLink exact to={routes.home} className={styles.NavLink}>
             <Logo />
           </NavLink>
         </li>
@@ -49,6 +46,14 @@ const Navigation = ({ isAuthenticated }) => {
       </ul>
     </nav>
   );
+};
+
+Navigation.defaultProps = {
+  isAuthenticated: false,
+};
+
+Navigation.propTypes = {
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
