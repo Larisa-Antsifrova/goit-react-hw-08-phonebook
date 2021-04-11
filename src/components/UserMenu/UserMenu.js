@@ -1,8 +1,5 @@
 // Imports from React
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// Imports of routes
-import routes from '../../routes';
 // Imports of components
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
@@ -32,14 +29,6 @@ const UserMenu = ({ userEmail, onLogout }) => {
       <button onClick={onLogout} className={styles.logoutbutton}>
         <ExitToAppIcon />
       </button>
-      {/* <NavLink
-        exact
-        to={routes.home}
-        onClick={onLogout}
-        className={styles.NavLink}
-      >
-        <ExitToAppIcon />
-      </NavLink> */}
     </div>
   );
 };
