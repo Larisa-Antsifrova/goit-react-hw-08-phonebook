@@ -1,15 +1,15 @@
+// Imports from React
 import React from 'react';
-
-import Section from '../components/Section';
+// Imports of components
 import Main from '../components/Main';
+import Section from '../components/Section';
+import PageTitle from '../components/PageTitle';
 
 const HomePage = () => {
   return (
     <Main>
       <Section>
-        <div>
-          <h1>Home Page</h1>
-        </div>
+        <PageTitle title="One App for ALL your contacts!" />
       </Section>
     </Main>
   );
