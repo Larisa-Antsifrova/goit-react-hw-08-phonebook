@@ -1,14 +1,15 @@
+// Imports from React
 import React from 'react';
-import Section from '../components/Section';
+// Imports of components
 import Main from '../components/Main';
+import Section from '../components/Section';
+import PageTitle from '../components/PageTitle';
 
 const NotFoundPage = () => {
   return (
     <Main>
       <Section>
-        <div>
-          <h2>404 Page not Found</h2>
-        </div>
+        <PageTitle title="404 Page not Found" />
       </Section>
     </Main>
   );
