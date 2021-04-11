@@ -27,8 +27,8 @@ class RegisterPage extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <Section>
-        <Main>
+      <Main>
+        <Section>
           <h1>Registration Page</h1>
 
           <form onSubmit={this.handleSubmit} autoComplete="off">
@@ -64,8 +64,8 @@ class RegisterPage extends Component {
 
             <button type="submit">Register</button>
           </form>
-        </Main>
-      </Section>
+        </Section>
+      </Main>
     );
   }
 }
