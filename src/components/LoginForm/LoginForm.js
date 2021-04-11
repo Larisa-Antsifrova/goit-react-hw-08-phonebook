@@ -1,10 +1,13 @@
+// Imports from React
 import React, { Component } from 'react';
+// Imports from Redux
 import { connect } from 'react-redux';
-
-import TextField from '@material-ui/core/TextField';
-
 import { loginUser } from '../../redux/auth/auth-operations';
-
+// Imports of components
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+// Imports of styles
+import styles from './LoginForm.module.css';
 class LoginForm extends Component {
   state = {
     email: '',
@@ -27,7 +30,11 @@ class LoginForm extends Component {
     const { email, password } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit} autoComplete="off">
+      <form
+        onSubmit={this.handleSubmit}
+        autoComplete="off"
+        className={styles.form}
+      >
         <TextField
           id="outlined-basic"
           variant="outlined"
@@ -38,6 +45,7 @@ class LoginForm extends Component {
             value: email,
             onChange: this.handleChange,
           }}
+          className={styles.input}
         />
 
         <TextField
@@ -50,9 +58,16 @@ class LoginForm extends Component {
             value: password,
             onChange: this.handleChange,
           }}
+          className={styles.input}
         />
-
-        <button type="submit">Login</button>
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          className={styles.button}
+        >
+          Login
+        </Button>
       </form>
     );
   }
