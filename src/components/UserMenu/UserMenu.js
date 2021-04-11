@@ -29,14 +29,17 @@ const UserMenu = ({ userEmail, onLogout }) => {
   return (
     <div className={styles.UserMenu}>
       <StyledChip avatar={<Avatar />} label={userEmail} />
-      <NavLink
+      <button onClick={onLogout} className={styles.logoutbutton}>
+        <ExitToAppIcon />
+      </button>
+      {/* <NavLink
         exact
         to={routes.home}
         onClick={onLogout}
         className={styles.NavLink}
       >
         <ExitToAppIcon />
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };

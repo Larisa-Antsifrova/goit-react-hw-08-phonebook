@@ -7,7 +7,7 @@
   color: #ffffff;
 }
 
-.NavLink {
+.logoutbutton {
   display: block;
   padding: 15px;
   margin-left: 10px;
@@ -15,9 +15,13 @@
   font-weight: 500;
   color: #ffffff;
 
+  outline: none;
+  border: none;
+  background-color: transparent;
+
   cursor: pointer;
 }
 
-.NavLink:hover {
+.logoutbutton:hover {
   background-color: #283593;
 }
